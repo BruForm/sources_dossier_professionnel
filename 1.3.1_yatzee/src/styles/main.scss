@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0%;
+  background: lightgrey;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btStart, .btNext{
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 50px;
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 0;
+}
+
+.divDices {
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  // height: 100px;
+  margin: 10px auto;
+  padding: 10px;
+  background: rgb(12, 81, 12);
+  border-radius: 10px;
+
+  .divOneDice {
+    margin: 10px 0;
+
+    img {
+      border-radius: 10%;
+      box-shadow: 5px 5px 5px black;
+    }
+
+    .btKeep{
+      display: block;
+      margin: 10px auto;
+    }
+  }
+}
+
+.btDown {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+.btUp {
+  // transform: translate(-5px, -5px);
+  box-shadow: 5px 5px 5px black;
+}

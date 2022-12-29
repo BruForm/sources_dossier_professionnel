@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Artistes{% endblock %}
+
+{% block main %}
+
+    <div class="container bg-danger">
+        {% for message in app.flashes('success') %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="container-fluid">
+        {{ form_start(artistFilterForm) }}
+        <div class="d-flex flex-column">
+            <div class="d-flex gap-4">
+                <div class="d-flex flex-column flex-grow-1">
+                    {{ form_label(artistFilterForm.lastnameFilter) }}
+                    {{ form_widget(artistFilterForm.lastnameFilter) }}
+                </div>
+                <div class="d-flex flex-column flex-grow-1">
+                    {{ form_label(artistFilterForm.firstnameFilter) }}
+                    {{ form_widget(artistFilterForm.firstnameFilter) }}
+                </div>
+                <div class="d-flex flex-column flex-grow-1">
+                    {{ form_label(artistFilterForm.nicknameFilter) }}
+                    {{ form_widget(artistFilterForm.nicknameFilter) }}
+                </div>
+            </div>
+            <div class="d-flex flex-wrap gap-4 mt-3">
+                <input type="submit" class="btn outline-btn" value="FILTER" style="height: 42px">
+                <a href="{{ path('app_artist') }}" class="btn solid-btn" style="height: 42px">RESET</a>
+            </div>
+        </div>
+        {{ form_end(artistFilterForm) }}
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 py-3 d-flex justify-content-between align-items-center">
+                        <p>Les artistes</p>
+                        {% if (is_granted('ROLE_ADMIN')) %}
+                            <a href="{{ path('app_artist_new') }}" class="text-decoration-underline"><i
+                                        class="fa-solid fa-plus"></i> Ajouter un
+                                artiste</a>
+                        {% endif %}
+                    </div>
+                    {% for artist in artists %}
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <a href="{{ path('app_artist_details', {'id':artist.id}) }}" class="artist-card bordered">
+                                <i class="fa-regular fa-user"></i>
+                                <div class="d-flex flex-column">
+                                    <p class="artist-lastname">{{ artist.lastname }}</p>
+                                    <p class="artist-firstname">{{ artist.firstname }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

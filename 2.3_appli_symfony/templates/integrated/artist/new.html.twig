@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel artiste{% endblock %}
+
+{% block main_class %}artist-form{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+            <form class="col-12 col-lg-6">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="page-title">Ajout d'un nouvel artiste</h2>
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="lastname" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="lastname">
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="firstname" class="form-label">Date de sortie</label>
+                        <input type="text" class="form-control" id="firstname">
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="dateOfBirth" class="form-label">Date de naissance</label>
+                        <input type="date" class="form-control" id="dateOfBirth">
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <label class="form-label">Genre</label>
+                        <div class="d-flex">
+                            <div class="form-check me-3">
+                                <input type="checkbox" class="form-check-input" id="man">
+                                <label class="form-check-label" for="man">Homme</label>
+                            </div>
+                            <div class="form-check me-3">
+                                <input type="checkbox" class="form-check-input" id="women">
+                                <label class="form-check-label" for="women">Femme</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-end pt-5">
+                        <a href="#" class="btn outline-btn">AJOUTER</a>
+                        <a href="#" class="btn solid-btn danger ms-3">ANNULER</a>
+                    </div>
+                </div>
+            </form>
+            <div class="col-12 col-lg-6"></div>
+        </div>
+    </div>
+{% endblock %}
+

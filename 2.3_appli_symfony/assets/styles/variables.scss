@@ -1,0 +1,23 @@
+$main-font: 'KoHo';
+
+:root {
+    --main-font: 'KoHo';
+
+    //--main-color: #A2ABFF;
+    //--secondary-color: #FFBFF9;
+
+    // theme black and blue
+    //--main-color: #0f0f0f;
+    //--secondary-color: #220ff9;
+
+    // theme blue tot blue
+    --main-color: #1f1f1f;
+    --secondary-color: #0f0f88;
+
+    --danger-color: #FF7878;
+
+    --light-text-color: #F0F0F0;
+
+    --main-gradiant: linear-gradient(90.1deg, var(--main-color) 0%, var(--secondary-color) 100%);
+    --main-gradiant-diag: linear-gradient(122.69deg, var(--main-color) 15.86%, var(--secondary-color) 71.54%);
+}

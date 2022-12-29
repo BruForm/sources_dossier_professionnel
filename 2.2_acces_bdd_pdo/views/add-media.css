@@ -1,0 +1,27 @@
+.one-row {
+    display: flex;
+    flex-direction: column;
+    }
+  
+  .one-row div {
+      display: flex;
+      flex-direction: row;
+  }
+  
+  .one-row div label{
+      width: 10%;
+  }
+  
+  .one-row div input{
+      width: 100%;
+  }
+
+  .one-row div select{
+    width: 100%;
+}
+  
+  .one-row button{
+      margin: 5px 0;
+      padding: 5px 10px;;
+      width: 100%;
+  }

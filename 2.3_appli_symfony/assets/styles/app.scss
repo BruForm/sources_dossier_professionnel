@@ -1,0 +1,20 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+@import 'variables';
+@import 'font';
+@import 'base';
+@import 'header';
+@import 'footer';
+
+@import 'templates/music-details';
+@import 'templates/music-form';
+@import 'templates/artist-details';
+@import 'templates/artist-form';
+@import 'templates/category-form';
+
+@import 'components/cards/music-card';
+@import 'components/cards/artist-card';
+@import 'components/cards/category-card';

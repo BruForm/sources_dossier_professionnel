@@ -1,0 +1,57 @@
+.container_top {
+  height: 250px;
+  background: #101010;
+  color: white;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  padding: 0 15%;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.container_top .title {
+  grid-row: 3 / 4;
+}
+
+.container_top span {
+  color: #ffab17;
+  font-size: small;
+}
+
+.container_top h1 {
+  margin: 0;
+}
+
+.container_top .menu {
+  grid-row: -2 / -1;
+  margin-left: auto;
+
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  text-align: center;
+
+  background: white;
+  font-size: smaller;
+}
+
+.container_top .menu a:nth-of-type(1) {
+  color: black;
+  cursor: pointer;
+}
+.container_top .menu a:nth-of-type(2) {
+    color: #ffab17;
+  }
+
+.container_top .menu .separ {
+  height: 0.7rem;
+  width: 2px;
+  background: black;
+}

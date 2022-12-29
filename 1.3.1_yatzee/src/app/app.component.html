@@ -1,0 +1,35 @@
+<h1>Yatzee</h1>
+<hr />
+<button
+  class="btStart"
+  [class.btUp]="Up === true && yatzee.turns > 0"
+  [class.btDown]="Up === false || yatzee.turns === 0"
+  (click)="yatzee.start()"
+  (mousedown)="btDown()"
+  (mouseup)="btUp()"
+>
+  Start
+</button>
+<div class="divDices">
+  <div class="divOneDice" *ngFor="let dice of yatzee.dices">
+    <img [src]="dice.diceImage" alt="Dice face" />
+    <button
+      class="btKeep"
+      (click)="dice.lockDice()"
+      [disabled]="dice.diceLocked"
+    >
+      Keep
+    </button>
+  </div>
+</div>
+<button
+  class="btNext"
+  [class.btUp]="Up === true && yatzee.turns === 0"
+  [class.btDown]="Up === false || yatzee.turns > 0"
+  (click)="yatzee.reset()"
+  (mousedown)="btDown()"
+  (mouseup)="btUp()"
+>
+  Next
+</button>
+<hr />

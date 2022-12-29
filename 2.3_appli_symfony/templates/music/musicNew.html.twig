@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle musique{% endblock %}
+
+{% block main_class %}music-form{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="page-title">Ajout d'une nouvelle musique</h2>
+                    </div>
+                    {{ form_start(musicForm) }}
+                    <div class="col-12 mb-3">
+                        {#                        <label for="title" class="form-label">Titre de la musique</label> #}
+                        {{ form_label(musicForm.title) }}
+                        {#                        <input type="text" class="form-control" id="title"> #}
+                        {{ form_widget(musicForm.title) }}
+                        {{ form_errors(musicForm.title) }}
+                    </div>
+                    <div class="col-12 mb-3">
+                        {#                        <label for="author" class="form-label">Auteur</label> #}
+                        {{ form_label(musicForm.author) }}
+                        {#                        <input type="text" class="form-control" id="author"> #}
+                        {{ form_widget(musicForm.author) }}
+                    </div>
+                    <div class="d-flex col-12 mb-3 justify-content-between">
+                        <div class="col-12 col-md-5 mb-3">
+                            {#                        <label for="duration" class="form-label">Durée (en secondes)</label> #}
+                            {{ form_label(musicForm.duration) }}
+                            {#                        <input type="number" class="form-control" id="duration"> #}
+                            {{ form_widget(musicForm.duration) }}
+                            {{ form_errors(musicForm.duration) }}
+                        </div>
+                        <div class="col-12 col-md-5 mb-3">
+                            {#                        <label for="releaseDate" class="form-label">Date de sortie</label> #}
+                            {{ form_label(musicForm.releaseDate) }}
+                            {#                        <input type="date" class="form-control" id="releaseDate"> #}
+                            {{ form_widget(musicForm.releaseDate) }}
+                            {{ form_errors(musicForm.releaseDate) }}
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        {#                        <label class="form-label">Catégorie</label> #}
+                        {{ form_label(musicForm.categories) }}
+                        {#                        {% dump(musicForm.categories) %} #}
+                        <div class="d-flex">
+                            {% for entityType in musicForm.categories.children %}
+                                <div class="form-check me-3">
+                                    {#                                    <input type="checkbox" class="form-check-input" id="categ2"> #}
+                                    {{ form_label(entityType, null, {'label_attr':{'class':'form-check-label'}}) }}
+                                    {#                                    <label class="form-check-label" for="categ2">Genre 2</label> #}
+                                    {{ form_widget(entityType, {'attr':{'class':'form-check-input'}}) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-end pt-5">
+                        <input type="submit" class="btn outline-btn" value="AJOUTER">
+                        <a href="{{ path('app_music') }}" class="btn solid-btn info ms-3">ANNULER</a>
+                    </div>
+                    {{ form_end(musicForm) }}
+                </div>
+            </div>
+            <div class="col-6"></div>
+        </div>
+    </div>
+{% endblock %}

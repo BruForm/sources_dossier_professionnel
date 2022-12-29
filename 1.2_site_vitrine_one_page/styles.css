@@ -1,0 +1,332 @@
+font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/Roboto-Regular.ttf) format("truetype");
+}
+
+header {
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  background-color: #044938;
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+header .logo {
+  margin-left: 5%;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+header .logo img {
+  width: 80%;
+}
+header nav {
+  display: flex;
+  justify-content: space-around;
+  padding-right: 15%;
+  padding-left: 15%;
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+header nav a {
+  text-decoration: none;
+  color: #f8f9fa;
+}
+
+footer {
+  background-color: #f8f9fa;
+  color: #044938;
+  padding-top: 3rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3rem;
+  text-align: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+footer h4 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+footer p {
+  text-transform: capitalize;
+}
+footer i {
+  padding-right: 5px;
+}
+footer img {
+  width: 25%;
+}
+footer .footRight {
+  align-self: flex-end;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #044938;
+  font-family: Roboto;
+}
+
+.section1 {
+  padding-top: 10vh;
+  padding-bottom: 1rem;
+}
+.section1 img {
+  width: 100%;
+}
+
+.section2 {
+  background-color: #f8f9fa;
+  color: #044938;
+  padding-top: 15vh;
+  padding-bottom: 3rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.section2 h1 {
+  position: relative;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding-bottom: 1rem;
+}
+.section2 h1::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #044938;
+  width: 7rem;
+  left: 0;
+  bottom: 0;
+}
+.section2 .section22 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.section2 .section22 article {
+  width: 500px;
+  padding-left: 2%;
+  font-size: 1.2rem;
+}
+.section2 .section22 article p {
+  text-align: justify;
+  padding-top: 1.5rem;
+}
+.section2 .section22 .videoBib {
+  width: 350px;
+  padding-top: 1.5rem;
+}
+
+.section3 {
+  color: #f8f9fa;
+  padding-top: 15vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3rem;
+}
+.section3 h1 {
+  position: relative;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding-bottom: 1rem;
+}
+.section3 h1::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #f8f9fa;
+  width: 7rem;
+  left: 0;
+  bottom: 0;
+}
+.section3 .section32 {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.section3 .section32 .blockImg {
+  width: 350px;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+.section3 .section32 article {
+  padding-right: 10%;
+  padding-left: 5%;
+}
+.section3 .section32 h2 {
+  font-size: 1.5rem;
+  padding-bottom: 5%;
+}
+.section3 .section32 p {
+  font-size: 1rem;
+  margin-bottom: 20%;
+}
+.section3 .section32 img {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.section3 .section32 .camDanel {
+  margin: 0;
+  width: 200px;
+}
+
+.section4 {
+  background-color: #f8f9fa;
+  color: #044938;
+  padding-top: 10vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3rem;
+}
+.section4 h1 {
+  position: relative;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding-bottom: 1rem;
+}
+.section4 h1::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #044938;
+  width: 7rem;
+  left: 0;
+  bottom: 0;
+}
+.section4 .section42 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.section4 .section42 article {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.section4 .section42 .joinUs {
+  width: 500px;
+}
+.section4 .section42 .joinUs h3 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+.section4 .section42 .joinUs p {
+  line-height: 1.5rem;
+}
+.section4 .section42 .annonce {
+  text-transform: uppercase;
+  border: 1px solid #044938;
+  background-color: #dfe0e1;
+  margin: 60px;
+  line-height: 1.5rem;
+}
+
+.section5 {
+  background-color: #044938;
+  color: #f8f9fa;
+  padding-top: 15vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3rem;
+}
+.section5 h1 {
+  position: relative;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding-bottom: 1rem;
+}
+.section5 h1::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #f8f9fa;
+  width: 7rem;
+  left: 0;
+  bottom: 0;
+}
+.section5 .section52 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.section5 .section52 form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.section5 .section52 form div {
+  display: flex;
+  flex-direction: column;
+}
+.section5 .section52 form .nomTel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.section5 .section52 form label {
+  margin-bottom: 0.5rem;
+}
+.section5 .section52 form input {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.section5 .section52 form textarea {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.section5 .section52 .bEnvoyer {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10%;
+}
+.section5 .section52 .map {
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .section1, .section2, .section3, .section4, .section5 {
+    padding-top: 20vh;
+  }
+
+  .section2 h1 {
+    font-size: 2rem;
+  }
+
+  header {
+    height: 20vh;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+  footer img {
+    width: 50%;
+  }
+}/*# sourceMappingURL=styles.css.map */

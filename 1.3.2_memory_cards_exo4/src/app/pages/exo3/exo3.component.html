@@ -1,0 +1,23 @@
+<p>exo3 works!</p>
+
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Age</th>
+      <th scope="col">Sexe</th>
+      <th scope="col">activité(s)</th>
+      <th scope="col">Niveau</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td scope="row">{{ student.name }}</td>
+      <td>{{ student.age }}</td>
+      <td>{{ student.sex }}</td>
+      <td>{{ student.activities.join(", ") }}</td>
+      <td *ngIf="student.age <= 18">Au lycée !</td>
+      <td *ngIf="student.age > 18">A la fac !</td>
+    </tr>
+  </tbody>
+</table>

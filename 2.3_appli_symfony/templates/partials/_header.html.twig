@@ -1,0 +1,48 @@
+<header class="main-header">
+    <nav class="navbar navbar-expand-lg p-0">
+        <div class="container-fluid p-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarToggler">
+                <a class="navbar-brand m-0" href="{{ path('app_home') }}">Symphonie</a>
+                <ul class="navbar-nav mb-2 mb-lg-0 flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.get('_route')[0:9] == 'app_music' ? 'active' : '' }}"
+                           aria-current="page" href="{{ path('app_music') }}">Les Musiques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.get('_route')[0:10]  == 'app_artist' ? 'active' : '' }}"
+                           aria-current="page" href="{{ path('app_artist') }}">Les Artistes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.get('_route')[0:12] == 'app_category' ? 'active' : '' }}"
+                           aria-current="page" href="{{ path('app_category') }}">Les Catégories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.get('_route')[0:11] == 'app_contact' ? 'active' : '' }}"
+                           aria-current="page" href="{{ path('app_home') }}">Contact</a>
+                    </li>
+                    <div class="d-flex ms-auto">
+                    {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link {{ app.request.get('_route') == 'app_logout' ? 'active' : '' }}"
+                               aria-current="page" href="{{ path('app_logout') }}">Log-out</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {{ app.request.get('_route') == 'app_login' ? 'active' : '' }}"
+                               aria-current="page" href="{{ path('app_login') }}">Log-in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ app.request.get('_route') == 'app_register' ? 'active' : '' }}"
+                               aria-current="page" href="{{ path('app_register') }}">New Account</a>
+                        </li>
+                    {% endif %}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

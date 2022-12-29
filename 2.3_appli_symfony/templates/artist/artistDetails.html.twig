@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails Artiste{% endblock %}
+
+{% block main_class %}artist-details{% endblock %}
+
+{% block main %}
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center p-3">
+                <i class="fa-solid fa-user"></i>
+                <table>
+                    <thead>
+                    <tr>
+                        <td colspan="2"><h2 class="artist-nickname">{{ artist.nickname }}</h2></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Nom :</td>
+                        <td class="text-end">{{ artist.lastname }}</td>
+                    </tr>
+                    <tr>
+                        <td>Prénom :</td>
+                        <td class="text-end">{{ artist.firstname }}</td>
+                    </tr>
+                    <tr>
+                        <td>Sexe :</td>
+                        <td class="text-end">{{ artist.gender }}</td>
+                    </tr>
+                    <tr>
+                        <td>Date de naissance :</td>
+                        <td class="text-end">{{ artist.dateOfBirth | date('d/m/Y') }}</td>
+                    </tr>
+                    {% if (is_granted('ROLE_ADMIN')) %}
+                        <tr>
+                            <td colspan="2">
+                                <a href="{{ path('app_artist_edit', {'id':artist.id}) }}" class="btn outline-btn w-100">ÉDITER</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="{{ path('app_artist_delete', {'id':artist.id}) }}"
+                                   class="btn solid-btn danger w-100">SUPPRIMER</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                    <tr>
+                        <td colspan="2">
+                            <a href="{{ path('app_artist') }}" class="btn solid-btn w-100">RETOUR</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-6 p-3 h-100 overflow-auto">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="artist-musics-title pb-3">Musiques réalisées :</p>
+                    </div>
+                    {% for music in artist.musics %}
+                        <div class="col-12 pb-3">
+                            <a href="{{ path('app_music_details', {'id' : music.id}) }}">{{ music.title }}
+                                - {{ music.categories | join(', ') }}
+                                - Sortie le : {{ music.releaseDate | date('d/m/Y') }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

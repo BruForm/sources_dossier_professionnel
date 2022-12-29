@@ -1,0 +1,29 @@
+<p>exo1 et EXO2 works!</p>
+
+<div class="divGames">
+  <div *ngFor="let game of games">
+    <div class="card" style="width: 18rem">
+      <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+      <div class="card-body">
+        <h5 class="card-title">{{ game }}</h5>
+        <p class="card-text">Bla bla... sur le jeu</p>
+        <button class="btn btn-primary" (click)="addToCard(game)">Add to card</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<h2 *ngIf="nbGamesInCard === 0">Aucun jeu dans votre panier !</h2>
+<h2 *ngIf="nbGamesInCard > 0">Vous avez {{nbGamesInCard}} jeu<span *ngIf="nbGamesInCard > 1">x</span> dans votre panier:</h2>
+<div class="divCard">
+    <div *ngFor="let game of gamesInCard">
+        <div class="card" style="width: 18rem">
+          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div class="card-body">
+            <h5 class="card-title">{{ game }}</h5>
+            <p class="card-text">Bla bla... sur le jeu</p>
+            <button class="btn btn-primary" (click)="deleteFromCard(game)">Delete from card</button>
+          </div>
+        </div>
+      </div>
+</div>

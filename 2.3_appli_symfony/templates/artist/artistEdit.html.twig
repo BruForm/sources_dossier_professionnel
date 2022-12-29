@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition artiste{% endblock %}
+
+{% block main_class %}artist-form{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+{#            <form class="col-12 col-lg-6">#}
+                {{ form_start(artistForm, {'attr':{'class':'col-12 col-lg-6'}}) }}
+                <div class="row">
+
+                    <div class="col-12">
+                        <h2 class="page-title">Edition d'un artiste</h2>
+                    </div>
+                    <div class="col-12 mb-3">
+                        {{ form_label(artistForm.nickname) }}
+                        {{ form_widget(artistForm.nickname) }}
+                        {{ form_errors(artistForm.nickname) }}
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+{#                        <label for="lastname" class="form-label">Nom</label>#}
+                        {{ form_label(artistForm.lastname) }}
+{#                        <input type="text" class="form-control" id="lastname">#}
+                        {{ form_widget(artistForm.lastname) }}
+                        {{ form_errors(artistForm.lastname) }}
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+{#                        <label for="firstname" class="form-label">Prénom</label>#}
+                        {{ form_label(artistForm.firstname) }}
+{#                        <input type="text" class="form-control" id="firstname">#}
+                        {{ form_widget(artistForm.firstname) }}
+                        {{ form_errors(artistForm.firstname) }}
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+{#                        <label for="dateOfBirth" class="form-label">Date de naissance</label>#}
+                        {{ form_label(artistForm.dateOfBirth) }}
+{#                        <input type="date" class="form-control" id="dateOfBirth">#}
+                        {{ form_widget(artistForm.dateOfBirth) }}
+                        {{ form_errors(artistForm.dateOfBirth) }}
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+{#                        <label class="form-label">Genre</label>#}
+                        {{ form_label(artistForm.gender) }}
+                        <div class="d-flex">
+                            {% for entityType in artistForm.gender.children %}
+                                <div class="form-check me-3">
+{#                                    <input type="checkbox" class="form-check-input" id="man">#}
+                                    {{ form_widget(entityType, {'attr':{'class':'form-check-input'}}) }}
+{#                                    <label class="form-check-label" for="man">Homme</label> #}
+                                    {{ form_label(entityType, null, {'label_attr':{'class':'form-check-label'}}) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {{ form_errors(artistForm.gender) }}
+                    </div>
+                    <div class="col-12 d-flex justify-content-end pt-5">
+                        <input type="submit" class="btn outline-btn" value="ENREGISTRER">
+                        <a href="{{ path('app_artist') }}" class="btn solid-btn ms-3">ANNULER</a>
+                    </div>
+                </div>
+{#            </form>#}
+            {{ form_end(artistForm) }}
+            <div class="col-12 col-lg-6"></div>
+        </div>
+    </div>
+{% endblock %}
+

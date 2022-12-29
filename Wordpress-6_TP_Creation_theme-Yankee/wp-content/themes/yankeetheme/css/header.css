@@ -1,0 +1,72 @@
+header {
+    position: absolute;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  
+  header nav .nav-bar {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  header nav .nav-bar .logo img {
+    width: 150px;
+  }
+  
+  header nav .nav-bar ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  header nav .nav-bar ul li {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  
+  header nav .nav-bar ul li a {
+    color: black;
+    text-decoration: none;
+  }
+  header nav .nav-bar ul li a:hover {
+    color: #ffab17;
+    text-decoration: none;
+  }
+  
+  header nav .phone {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: #ffab17;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding: 5px 20px;
+    min-width: 230px;
+  }
+  
+  header nav .phone span:nth-of-type(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+  }
+  
+  header nav .phone span:nth-of-type(2) {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+    font-size: 0.75rem;
+    align-self: flex-end;
+  }
+  
+  header nav .phone span:nth-of-type(3) {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  

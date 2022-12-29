@@ -1,0 +1,36 @@
+.board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btDisabled {
+  display: none;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+
+  .card-title {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .cardImg {
+    cursor: pointer;
+
+    img {
+      margin: 5px;
+      width: 100px;
+    }
+  }
+}
+
+.selected{
+  background: lightgreen;
+}
+
+.grisee {
+  background: grey;
+}

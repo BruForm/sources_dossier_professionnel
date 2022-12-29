@@ -1,0 +1,35 @@
+footer {
+    background-color: $mainWhite;
+    color: $mainGreen;
+    padding-top: 3rem;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3rem;
+    text-align: center;
+  
+    display: flex;
+    // flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-around;
+  
+    h4 {
+      font-size: $fontSizeH4;
+      text-transform: uppercase;
+    }
+  
+    p {
+      text-transform: capitalize;
+    }
+  
+    i {
+      padding-right: 5px;
+    }
+  
+    img {
+      width: 25%;
+    }
+  
+    .footRight {
+      align-self: flex-end;
+    }
+  }

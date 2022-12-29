@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block main %}
+
+    <div class="container bg-danger">
+        {% for message in app.flashes('success') %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="container d-flex justify-content-center gap-5 flex-wrap mt-5">
+        <div class="card bg-transparent" style="min-width: 18rem;">
+            {#        <img src="..." class="card-img-top" alt="..."> #}
+            <div class="card-body">
+                <h5 class="card-title">The 3 last Musics</h5>
+                <ul>
+                    {% for music in last3Musics %}
+                        <li>
+                            <a href="{{ path('app_music_details', {'id' : music.id}) }}" class="text-decoration-none">
+                                {{ music.title }} - {{ music.author.nickname }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {#            <a href="#" class="btn btn-primary">Go somewhere</a> #}
+            </div>
+        </div>
+
+        <div class="card bg-transparent" style="min-width: 18rem;">
+            {#        <img src="..." class="card-img-top" alt="..."> #}
+            <div class="card-body">
+                <h5 class="card-title">Top 5 longest Musics</h5>
+                <ul>
+                    {% for music in topLongest5 %}
+                        <li>
+                            <a href="{{ path('app_music_details', {'id' : music.id}) }}" class="text-decoration-none">
+                                {{ music.title }} - {{ music.durationFormatted }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {#            <a href="#" class="btn btn-primary">Go somewhere</a> #}
+            </div>
+        </div>
+
+        <div class="card bg-transparent" style="min-width: 18rem;">
+            {#        <img src="..." class="card-img-top" alt="..."> #}
+            <div class="card-body">
+                    <h5 class="card-title">Top 5 Artists with more Musics</h5>
+                <ul>
+                    {% for artist in ones5MoreMusics %}
+                        <li>
+                            <a href="{{ path('app_artist_details', {'id' : artist.id}) }}" class="text-decoration-none">
+                                {{ artist.nickname }} ({{ artist.musics | length }})
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {#            <a href="#" class="btn btn-primary">Go somewhere</a> #}
+            </div>
+        </div>
+
+        <div class="card bg-transparent" style="min-width: 18rem;">
+            {#        <img src="..." class="card-img-top" alt="..."> #}
+            <div class="card-body">
+                <h5 class="card-title">Top 3 Categories with more Musics</h5>
+                <ul>
+                    {% for categ in ones3MoreMusics %}
+                        <li>
+                            <a href="{{ path('app_category_details', {'id' : categ.id}) }}" class="text-decoration-none">
+                                {{ categ.name }} ({{ categ.musics | length }})
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {#            <a href="#" class="btn btn-primary">Go somewhere</a> #}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

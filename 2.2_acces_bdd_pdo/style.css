@@ -1,0 +1,33 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: darkblue;
+  text-align: center;
+}
+
+.alert {
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav-bar {
+  display: flex;
+  padding: 5px 10px;
+}
+
+.nav-bar .connexion-btn {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-bar .connexion-btn .connexion-tag {
+  text-align: center;
+  font-size: small;
+}

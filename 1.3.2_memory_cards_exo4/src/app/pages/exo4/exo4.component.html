@@ -1,0 +1,36 @@
+<p>exo4 works!</p>
+<div class="board">
+  <div *ngFor="let card of cards">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" [class.selected]="card.hasBeenReturned" [class.grisee]="card.hasBeenFound">
+          {{ card.id + 1 }}
+        </h5>
+        <div
+          class="cardImg"
+          (click)="card.hasBeenReturned = true"
+          (click)="game.checkCouple(card)"
+        >
+          <img
+            *ngIf="!card.hasBeenReturned"
+            src="../../../assets/images/test-dos-06-img.png"
+            alt=""
+          />
+          <img
+            *ngIf="card.hasBeenReturned"
+            [src]="'../../../assets/images/' + card.image"
+            alt=""
+          />
+        </div>
+        <button
+          class="btn btn-primary"
+          (click)="card.hasBeenReturned = true"
+          (click)="game.checkCouple(card)"
+          [disabled]="card.hasBeenFound"
+        >
+          Select
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

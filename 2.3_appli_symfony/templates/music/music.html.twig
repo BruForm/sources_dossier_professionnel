@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Musiques{% endblock %}
+
+{% block main %}
+
+    <div class="container bg-danger">
+        {% for message in app.flashes('success') %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="container-fluid">
+        {{ form_start(musicFilterForm) }}
+        <div class="d-flex flex-column">
+            <div class="d-flex gap-4">
+                <div class="d-flex flex-column flex-grow-1">
+                    {{ form_label(musicFilterForm.musicFilter) }}
+                    {{ form_widget(musicFilterForm.musicFilter) }}
+                </div>
+            </div>
+            <div class="d-flex flex-wrap gap-4 mt-3">
+                <input type="submit" class="btn outline-btn" value="FILTER">
+                <a href="{{ path('app_music') }}" class="btn solid-btn">RESET</a>
+            </div>
+        </div>
+        {{ form_end(musicFilterForm) }}
+
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <div class="row">
+                    <div class="col-12 py-3 d-flex justify-content-between align-items-center">
+                        <p>Les musiques</p>
+                        {% if (is_granted('ROLE_ADMIN')) %}
+                            <a href="{{ path('app_music_new') }}" class="text-decoration-underline"><i
+                                        class="fa-solid fa-plus"></i> Ajouter une
+                                musique</a>
+                        {% endif %}
+                    </div>
+                    {% for music in musics %}
+                        <div class="col-12 mb-3">
+                            <a href="{{ path('app_music_details', {'id' : music.id}) }}" class="music-card bordered">
+                                <h2 class="music-title">{{ music.title }}</h2>
+                                <p class="music-author">{{ music.author.nickname }}</p>
+                                <p class="music-category">
+                                    {{ music.categories | join(', ') }}
+                                </p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                {#                todo reserved for stats #}
+            </div>
+        </div>
+    </div>
+{% endblock %}

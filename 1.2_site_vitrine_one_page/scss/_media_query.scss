@@ -1,0 +1,31 @@
+@media screen and (max-width: 800px) {
+  
+  .section1, .section2, .section3, .section4, .section5 {
+    padding-top: 20vh;
+  }
+
+  .section2 {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  header {
+    // background-color: blueviolet;
+    height: 20vh;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+  
+
+    img {
+      width: 50%;
+    }
+  }
+
+}

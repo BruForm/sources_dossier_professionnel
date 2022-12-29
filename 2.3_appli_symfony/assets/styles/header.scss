@@ -1,0 +1,37 @@
+.main-header {
+    background: var(--main-gradiant);
+
+    .navbar-toggler {
+        margin: 0.5rem auto;
+        border-color: var(--light-text-color);
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    a.navbar-brand,
+    .nav-item a.nav-link {
+        color: var(--light-text-color);
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    a.navbar-brand {
+        font-size: 2rem;
+    }
+
+    .nav-item {
+        a.nav-link {
+            font-size: 1.2rem;
+
+            &:hover,
+            &.active {
+                background-color: var(--main-color);
+            }
+        }
+    }
+}

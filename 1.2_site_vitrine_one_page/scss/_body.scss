@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// .backtest {
+//   background-image: url("assets/images/maquette.png");
+//   background-repeat: no-repeat;
+//   background-size: 100%;
+//   opacity: 0.75;
+// }
+
+body {
+  background-color: $mainGreen;
+  font-family: $font1;
+}
+
+.section1 {
+  padding-top: 10vh;
+  padding-bottom: 1rem;
+  img {
+    width: 100%;
+  }
+}
+
+.section2 {
+  background-color: $mainWhite;
+  color: $mainGreen;
+  padding-top: 15vh;
+  padding-bottom: 3rem;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  h1 {
+    position: relative;
+    font-size: $fontSizeH1;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-bottom: 1rem;
+    &::after {
+      position: absolute;
+      content: "";
+      border-bottom: 2px solid $mainGreen;
+      width: 7rem;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .section22 {
+    // display: grid;
+    // grid-template-columns: 50% 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    article {
+      width: 500px;
+      padding-left: 2%;
+      font-size: 1.2rem;
+
+      p {
+        text-align: justify;
+        padding-top: 1.5rem;
+      }
+    }
+
+    .videoBib {
+      width: 350px;
+      padding-top: 1.5rem;
+    }
+  }
+}
+
+.section3 {
+  color: $mainWhite;
+  padding-top: 15vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3rem;
+
+  h1 {
+    position: relative;
+    font-size: $fontSizeH1;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-bottom: 1rem;
+    &::after {
+      position: absolute;
+      content: "";
+      border-bottom: 2px solid $mainWhite;
+      width: 7rem;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .section32 {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .blockImg {
+      width: 350px;
+      display: grid;
+      grid-template-columns: 30% 1fr;
+    }
+
+    article {
+      padding-right: 10%;
+      padding-left: 5%;
+    }
+    h2 {
+      font-size: $fontSizeH2;
+      padding-bottom: 5%;
+    }
+    p {
+      font-size: $fontSizeVehic;
+      margin-bottom: 20%;
+    }
+    img {
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .camDanel {
+      margin: 0;
+      width: 200px;
+    }
+  }
+}
+
+.section4 {
+  background-color: $mainWhite;
+  color: $mainGreen;
+  padding-top: 10vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3rem;
+
+  h1 {
+    position: relative;
+    font-size: $fontSizeH1;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-bottom: 1rem;
+
+    &::after {
+      position: absolute;
+      content: "";
+      border-bottom: 2px solid $mainGreen;
+      width: 7rem;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  .section42 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    article {
+      margin-top: 2rem;
+      padding: 1rem;
+    }
+
+    .joinUs {
+      width: 500px;
+      // display: flex;
+      // flex-wrap: wrap;
+      // flex-direction: column;
+
+      h3 {
+        font-size: $fontSizeH3;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 0.5rem;
+      }
+      p {
+        line-height: 1.5rem;
+      }
+    }
+
+    .annonce {
+      text-transform: uppercase;
+      border: 1px solid $mainGreen;
+      background-color: $grey;
+      margin: 60px;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.section5 {
+  background-color: $mainGreen;
+  color: $mainWhite;
+  padding-top: 15vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3rem;
+
+  h1 {
+    position: relative;
+    font-size: $fontSizeH1;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-bottom: 1rem;
+
+    &::after {
+      position: absolute;
+      content: "";
+      border-bottom: 2px solid $mainWhite;
+      width: 7rem;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .section52 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      // justify-content: space-between;
+      // width: 50%;
+      // padding: 1rem;
+      padding-top: 1rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nomTel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        // padding-right: -5px;
+        // padding-left: -5px;
+      }
+
+      .nom {
+        // padding-right: 5px;
+      }
+
+      .tel {
+        // padding-left: 5px;
+      }
+
+      label {
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-family: $font0;
+      }
+
+      textarea {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-family: $font0;
+      }
+    }
+
+    .bEnvoyer {
+      width: fit-content;
+      padding: 10px;
+      border-radius: 10%;
+    }
+
+    .map {
+      // padding: 1rem;
+      padding-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails musique{% endblock %}
+
+{% block main_class %}music-details d-flex flex-column justify-content-center align-items-center{% endblock %}
+
+{% block main %}
+    <i class="fa-solid fa-music"></i>
+    <table>
+        <thead>
+        <tr>
+            <td colspan="2"><h2 class="music-title">{{ music.title }}</h2></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Auteur :</td>
+            <td class="text-end">{{ music.author.nickname }}</td>
+        </tr>
+        <tr>
+            <td>Durée :</td>
+            <td class="text-end">{{ music.durationFormatted }}</td>
+        </tr>
+        <tr>
+            <td>Catégories :</td>
+            <td class="text-end">{{ music.categories | join(', ') }}</td>
+        </tr>
+        <tr>
+            <td>Date de sortie :</td>
+            <td class="text-end">{{ music.releaseDate | date('Y/m/d') }}</td>
+        </tr>
+        {% if (is_granted('ROLE_ADMIN')) %}
+{#            and ((app.request.headers.get('referer') | split('/'))[3] == 'musics')#}
+{#        %}#}
+            <tr>
+                <td colspan="2">
+                    <a href="{{ path('app_music_edit', {'id' : music.id}) }}" class="btn outline-btn w-100">ÉDITER</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="{{ path('app_music_delete', {'id' : music.id}) }}"
+                       class="btn solid-btn danger w-100">SUPPRIMER</a>
+                </td>
+            </tr>
+        {% endif %}
+        <tr>
+{#            {% dump(app.request.headers.get('referer')) %}#}
+{#            {% dump((app.request.headers.get('referer') | split('/')))[3] %}#}
+            <td colspan="2">
+                {#                <a href="{{ path('app_music') }}" class="btn solid-btn info w-100">RETOUR</a> #}
+{#                <a href="#}
+{#                    {% if ((app.request.headers.get('referer') | split('/'))[3] != 'musics') %}#}
+{#                    {{ app.request.headers.get('referer') }}#}
+{#                    {% else %}#}
+{#                    {{ path('app_music') }}#}
+{#                    {% endif %}#}
+{#                    " class="btn solid-btn info w-100">RETOUR</a>#}
+                <a href="{{ app.request.headers.get('referer') }}" class="btn solid-btn info w-100">RETOUR</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
